@@ -9,6 +9,7 @@ width: 100%;
   font-family: Dancing Script;
   width: 900px;
   margin:auto;
+  animation: animacion 2s;
 }
 #header{
   background: #5b7989;
@@ -53,6 +54,7 @@ display: flex;
 flex-direction: row;
 background-color: #d5c75f;
 width: 100%;
+margin: 0 auto;
 }
 
 #imagen_secundaria img{
@@ -62,9 +64,6 @@ height: 100%;
 box-shadow: 2px 2px 2px #82c3a6;
 }
 
-#imagen_secundaria div{
-width: 50%;
-}
 
 img{
 display:block;
@@ -103,6 +102,61 @@ text-decoration: none;
   margin-right: 0.5em !Important;
   width: 2em;
 }
+
+#galeria_retratos{
+  display: flex;
+  flex-direction: row;
+  background-color: #d5c75f;
+  width: 100%;
+}
+
+#galeria_retratos img{
+border: 2px solid black;
+width: 100%;
+height: 100%;
+box-shadow: 2px 2px 2px #82c3a6;
+}
+
+#active_link{
+  text-decoration: none;
+}
+
+#imagen_secundaria > :first-child figure:hover{
+  transform: rotate(10deg);
+}
+
+#imagen_secundaria > :last-child figure:hover{
+  transform: translate(20px,-5px);
+}
+
+.blur{
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.grises{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.sepia{
+  filter: sepia(90%);
+  -webkit-filter: sepia(90%);
+}
+
+@-webkit-keyframes animacion{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+
+
 @media only screen and (max-width: 900px) {
   #contenido{
     width: 100%;
@@ -153,5 +207,13 @@ text-decoration: none;
   }
   .redes a{
     text-align: left;
+  }
+  #galeria_retratos{
+  display: block;
+  width: 100%;
+  }
+  #galeria_retratos div{
+    width: 100%;
+    margin: 0 auto;
   }
 }
